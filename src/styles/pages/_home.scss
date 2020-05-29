@@ -1,0 +1,57 @@
+.shop-card {
+    width: 280px;
+    height: 420px;
+    position: relative;
+
+    .pic {
+        width: 280px;
+        height: 310px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 400ms all ease-in-out;
+
+            &:hover {
+                transform: translateX(-50%) scale(1.2,1.2);
+            }
+        }
+    }
+
+    .data {
+        width: 280px;
+        height: 110px;
+        background-color: #f6f6f6;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include flex-column(center, center);
+        cursor: pointer;
+
+        p {
+            padding: 0;
+        }
+
+        p:nth-child(1) {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        p:nth-child(2) {
+            font-size: 16px;
+            color: #707070;
+        }
+
+        p:nth-child(3) {
+            font-size: 18px;
+            color: #888;
+            font-weight: 700;
+        }
+
+    }
+}

@@ -1,0 +1,90 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    @include flex(space-between, center);
+    padding: 0 20px 0 75px;
+    z-index: 100;
+    background-color: white;
+
+    .title {
+        height: 80px;
+        @include flex(center, center);
+
+        h1.front-page {
+            font-size: 2.5rem;
+            border-bottom: none;
+            color: $brand-color;
+        }
+
+        h1.regular {
+            font-size: 2rem;
+            border-bottom: 1px solid $brand-color;
+            color: $font-color-dark;
+        }
+
+        h1.sub {
+            font-size: 1.8rem;
+            border-bottom: 1px solid $brand-color;
+            color: $font-color-dark;
+        }
+
+        h1.only-title {
+            font-size: 1.5rem;
+            border-bottom: none;
+            color: $font-color-dark;
+        }
+    }
+
+    img {
+        height: 30px;
+    }
+
+}
+
+@media (max-width: $medium-device) {
+    header {
+    
+        .title {
+            @include flex(center, center);
+    
+            h1.front-page {
+                font-size: 2rem;
+            }
+
+            h1.regular {
+                font-size: 1.6rem;
+            }
+
+            h1.sub {
+                font-size: 1.4rem;
+            }
+
+            h1.only-title {
+                font-size: 1.2rem;
+            }
+        }
+    
+        img {
+            height: 25px;
+        }
+    }
+}
+
+@media (max-width: $small-device) {
+    header {
+    
+        .title {    
+            h1 {
+                font-size: 1.4rem !important;
+            }
+        }
+    
+        img {
+            height: 20px;
+        }
+    
+    }
+}

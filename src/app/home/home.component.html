@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="grid-container">
+        <div class="shop-card" *ngFor="let product of products">
+            <div class="pic">
+                <img [src]="product.pics[0]" alt="">
+            </div>
+            <div class="data" routerLink="/product/{{product.sku}}">
+                <p>{{product.category}}</p>
+                <p>{{product.name}}</p>
+                <p>{{product.price}},00 €</p>
+            </div>
+        </div>
+    </div>
+</div>

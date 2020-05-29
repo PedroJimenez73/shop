@@ -1,0 +1,161 @@
+
+.container {
+    width: 100%;
+    max-width: 920px;
+    margin: $header-height auto 0;
+    padding-bottom: $footer-height;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    grid-template-rows: repeat(2, 420px);
+    grid-gap: 2rem;
+    justify-content: space-around;
+}
+
+.row {
+    margin: 0.5rem 1rem;
+
+    &.titles {
+        padding: 0 1rem;
+    }
+
+    &.flex {
+        @include flex(flex-start, stretch);
+        flex-wrap: wrap;
+    }
+}
+
+
+.col {
+    padding: 1rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-66 {
+    width: 66.66666%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-33 {
+    width: 33.33333%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.top-center {
+    @include flex-column(flex-start, center);
+}
+
+.top-right {
+    @include flex-column(flex-start, flex-end);
+}
+
+.center-left {
+    @include flex-column(center, flex-start);
+}
+
+.center-center {
+    @include flex-column(center, center);
+}
+
+.center-right {
+    @include flex-column(center, flex-end);
+}
+
+.bottom-left {
+    @include flex-column(flex-end, flex-start);
+}
+
+.bottom-center {
+    @include flex-column(flex-end, center);
+}
+
+.bottom-right {
+    @include flex-column(flex-end, flex-end);
+}
+
+@media (max-width: $small-device) {
+    .row {
+        margin: 0.5rem;
+    }    
+    
+    .col {
+        padding: 0.5rem;
+    }
+
+    .w-80,
+    .w-75,
+    .w-66,
+    .w-60,
+    .w-50,
+    .w-40,
+    .w-33,
+    .w-25,
+    .w-20 {
+        // padding: 0;
+        width: 100%;
+    }
+
+}
+
+.m-r-small {
+    margin-right: 1rem;
+}
+
+.m-r-medium {
+    margin-right: 2rem;
+}
+
+.m-l-small {
+    margin-left: 1rem;
+}
+
+.m-l-medium {
+    margin-left: 2rem;
+}
+
+.m-t-small {
+    margin-top: 1rem;
+}
+
+.m-t-medium {
+    margin-top: 2rem;
+}
+
+.m-b-small {
+    margin-bottom: 1rem;
+}
+
+.m-b-medium {
+    margin-bottom: 2rem;
+}

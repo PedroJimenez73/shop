@@ -1,0 +1,154 @@
+.burger {
+    position: fixed;
+    top: 23.5px;
+    left: 20px;
+    z-index: 400;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    .bar {
+        height: 3px;
+        width: 35px;
+        background-color: $brand-color;
+        margin: 6px auto;
+
+        &.top, 
+        &.middle, 
+        &.down {
+            transition: all .7s ease;
+        }
+    }
+    
+    &:hover{
+        cursor: pointer;
+        
+        .bar {
+            background-color: $brand-color-hover;
+        }
+    }
+
+    &.open .bar.top {
+        transform: translateY(9px) rotateZ(45deg);
+        background-color: white;
+    }
+    
+    &.open .bar.middle {
+        width: 0;
+    }
+    
+    &.open .bar.down {
+        transform: translateY(-9px) rotateZ(-45deg);
+        background-color: white;
+    }
+}
+
+.side {
+    width: 100vw;
+    max-width: 360px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 13px 0 0 rgba(82,63,105,.05);
+    position: fixed;
+    top: 0;
+    left: -360px;
+    z-index: 300;
+    transition: all 300ms ease-in;
+    overflow-y: auto;
+
+    &.open {
+        left: 0;
+    }
+
+    .title-side {
+        background-color: $brand-color-70;
+        width: 100%;
+        height: 200px;
+        z-index: 25px;
+        background-image: url('src/assets/small-front-page.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .filter {
+            background-color: $brand-color-70;
+            width: 100%;
+            height: 100%;
+            @include flex-column(flex-end, center);
+
+            p {
+                color: white;
+                font-family: $titles-font;
+                font-size: 32px;
+                text-align: center;
+                line-height: 1.2;
+            }
+
+        }
+    }
+
+    .nav-side {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        height: calc(100vh - 240px);
+        width: 100%;
+        overflow-y: auto;
+
+        p {
+            padding: 1em 1.5em;
+            transition: all 0.5s ease-in;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            cursor: pointer;
+            color: $brand-color;
+
+            img {
+                margin-left: 15px;
+                height: 30px;
+                min-height: 30px;
+                width: 30px;
+                min-width: 30px;
+            }
+        }
+
+        p:hover {
+            background-color: #f2f2f2;
+        }
+
+        p.lock {
+            color: $font-color;
+            cursor: not-allowed;
+        }
+
+        p.lock:hover {
+            background-color: transparent;
+        }
+    }
+
+    .footer-side {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        width: 100%;
+        @include flex(center, center);
+        background-color: $brand-color;
+        z-index: 20;
+
+        p {
+            color: white;
+            font-size: 12px; 
+            text-align: center; 
+        }
+    }
+}
+
+
+

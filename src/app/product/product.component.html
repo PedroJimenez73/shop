@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="product-container">
+        <div class="product-pics">
+            <div class="main-pic">
+                <img [src]="activePic" alt="">
+            </div>
+            <div class="thumbs">
+                <img #thumb [ngClass]="{active: i === 0}" *ngFor="let pic of product.pics; let i = index" [src]="pic" (click)="showPic(i)">
+            </div>
+        </div>
+        <div class="product-data">
+            <div class="product-title">
+                <h1>{{product.name}}</h1>
+                <h2>{{product.price}},00 €</h2>
+            </div>
+            <div class="product-description">
+                <p>{{product.description}}</p>
+            </div>
+            <div class="product-features">
+                <div>
+                    <p class="custom-label">TALLA</p>
+                    <div class="custom-select">
+                        <div class="custom-selected" (click)="showSizeOptions()">
+                            {{item.size}}
+                            <img src="assets/icons/down.svg" alt="">
+                        </div>
+                        <div #sizeOptions class="custom-options">
+                            <div class="custom-option" 
+                                *ngFor="let size of product.sizes; let i = index;"
+                                (click)="setSize(i)">{{size}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-l-small">
+                    <p class="custom-label">COLOR</p>
+                    <div class="custom-select">
+                        <div class="custom-selected" (click)="showColorOptions()">
+                            {{item.color}}
+                            <img src="assets/icons/down.svg" alt="">
+                        </div>
+                        <div #colorOptions class="custom-options">
+                            <div class="custom-option" 
+                                *ngFor="let color of product.colors; let i = index;"
+                                (click)="setColor(i)">{{color}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-quantity">
+                <div>
+                    <p class="custom-label">CANTIDAD</p>
+                    <div class="custom-quantity">
+                        <div><img src="assets/icons/minus.svg" alt=""></div>
+                        <div>{{item.quantity}}</div>
+                        <div><img src="assets/icons/plus.svg" alt=""></div>
+                    </div>
+                </div>
+                <div>
+                    <button>AÑADIR A LA CESTA</button>
+                </div>
+            </div>
+            <div class="product-extra">
+                <p>Envío en 3 días hábiles</p>
+            </div>
+        </div>
+    </div>
+</div>

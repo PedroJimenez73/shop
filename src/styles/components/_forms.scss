@@ -1,0 +1,63 @@
+
+.custom-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-select {
+    position: relative;
+
+    .custom-selected {
+        background-color: #f6f6f6;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        @include flex(space-between, center);
+    }
+
+    .custom-options {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+
+        .custom-option {
+            width: 100%;
+            background-color: #f6f6f6;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                background-color: $font-color-light;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .custom-options.show {
+        display: block;
+    }
+
+}
+
+.custom-quantity {
+    display: flex;
+
+    div {
+        background-color: #f6f6f6;
+        padding: 0.5rem 1rem;
+    }
+
+    div:nth-child(1),
+    div:nth-child(3) {
+        padding: 0 0.8rem;
+        background-color: $font-color-light;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 400ms ease-in-out;
+
+        &:hover {
+            background-color: $font-color;
+        }
+    }
+}
